@@ -1,0 +1,22 @@
+{
+  "name": "GateOS Pro",
+  "short_name": "GateOS",
+  "description": "Controle de acesso inteligente para condomínios.",
+  "start_url": "/login.html",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/images/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/images/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

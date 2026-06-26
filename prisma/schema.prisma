@@ -1,0 +1,68 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+}
+
+model Condominio {
+  id              String    @id @default(uuid())
+  nome            String
+  cnpj            String?   // <-- ADICIONE ESTA LINHA AQUI!
+  asaasId         String?
+  qtdUnidades     Int?
+  accessCode      String?
+  codeExpiresAt   DateTime?
+  trialEndsAt     DateTime?
+  statusPagamento String?   @default("TRIAL")
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+  
+  users           User[]
+  devices         Device[]
+}
+
+model User {
+  id                 String      @id @default(uuid())
+  nome               String?
+  email              String      @unique
+  password           String
+  role               String?     @default("morador")
+  mustChangePassword Boolean?    @default(false)
+  unitType           String?
+  unitNumber         String?
+  unitBlock          String?
+  createdAt          DateTime    @default(now())
+  updatedAt          DateTime    @updatedAt
+  
+  condominioId       String?
+  condominio         Condominio? @relation(fields: [condominioId], references: [id])
+  logs               Log[]
+}
+
+model Device {
+  serialNumber String      @id
+  nomeAmigavel String
+  statusUltimo String?     @default("OFFLINE")
+  securityCode String?     @default("1234")
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+  
+  condominioId String?
+  condominio   Condominio? @relation(fields: [condominioId], references: [id])
+  logs         Log[]
+}
+
+model Log {
+  id                 String   @id @default(uuid())
+  acao               String?
+  dataHora           DateTime @default(now())
+  
+  userId             String?
+  user               User?    @relation(fields: [userId], references: [id])
+  
+  deviceSerialNumber String?
+  device             Device?  @relation(fields: [deviceSerialNumber], references: [serialNumber])
+}

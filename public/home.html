@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GateOS | O Controle na Palma da Mão</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #0f172a;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .text-primary-custom {
+            color: #3b82f6 !important;
+        }
+
+        .text-accent-custom {
+            color: #10b981 !important;
+        }
+
+        .bg-card {
+            background-color: #1e293b;
+            border: 1px solid #334155;
+        }
+
+        /* Navbar Transparente */
+        .navbar-custom {
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #334155;
+        }
+
+        /* Botões */
+        .btn-pro {
+            background-color: #3b82f6;
+            color: white;
+            border: none;
+            font-weight: bold;
+        }
+
+        .btn-pro:hover {
+            background-color: #2563eb;
+            color: white;
+        }
+
+        .btn-home {
+            background-color: transparent;
+            color: #10b981;
+            border: 1px solid #10b981;
+            font-weight: bold;
+        }
+
+        .btn-home:hover {
+            background-color: #10b981;
+            color: white;
+        }
+
+        /* Efeitos Hover nos Cards */
+        .product-card {
+            transition: 0.3s;
+            height: 100%;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            border-color: #3b82f6;
+        }
+
+        .card-hardware:hover {
+            border-color: #f97316;
+        }
+
+        /* Laranja da Shopee */
+
+        /* Player de Vídeo Principal */
+        .video-hero {
+            background: #000;
+            width: 100%;
+            max-width: 800px;
+            height: 450px;
+            margin: 0 auto;
+            border-radius: 16px;
+            border: 1px solid #334155;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            background-image: url('https://images.unsplash.com/photo-1558002038-1055907df827?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .video-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 16px;
+        }
+
+        .play-btn {
+            font-size: 4rem;
+            color: #3b82f6;
+            cursor: pointer;
+            transition: 0.3s;
+            z-index: 2;
+        }
+
+        .play-btn:hover {
+            transform: scale(1.1);
+            color: #10b981;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top py-3">
+        <div class="container">
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
+                <i class="bi bi-building fs-3 me-2 text-primary-custom"></i>
+                GATE<span class="text-primary-custom">OS</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center fw-semibold">
+                    <li class="nav-item"><a class="nav-link px-3" href="#solucoes">Soluções</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#hardware">Hardware Oficial</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#tutoriais">Tutoriais</a></li>
+                    <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                        <a href="/login.html" class="btn btn-pro px-4 rounded-3">Acessar Sistema</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="container text-center text-white" style="padding-top: 150px; padding-bottom: 80px;">
+        <h1 class="display-3 fw-bold mb-4">O controle de acesso do futuro,<br>na palma da sua mão.</h1>
+        <p class="fs-5 text-secondary mb-5 mx-auto" style="max-width: 700px;">
+            Desenvolvido pela Cortex Technologia. Soluções robustas em nuvem para Condomínios e Casas Inteligentes, com
+            tecnologia de ponta e altíssima segurança.
+        </p>
+
+        <div class="video-hero">
+            <div class="video-overlay d-flex flex-column align-items-center justify-content-center">
+                <i class="bi bi-play-circle-fill play-btn" onclick="alert('Canal do YouTube em breve!')"></i>
+                <span class="mt-3 text-light fw-semibold z-2">Assista ao nosso vídeo de apresentação</span>
+            </div>
+        </div>
+    </header>
+
+    <section id="solucoes" class="container py-5 border-top border-secondary border-opacity-25">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold text-white">Escolha a sua plataforma</h2>
+            <p class="text-secondary">Sistemas desenvolvidos para diferentes escalas de necessidade.</p>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-5">
+                <div class="card bg-card p-4 product-card border-0 rounded-4 shadow">
+                    <h3 class="fw-bold text-primary-custom d-flex align-items-center mb-3">
+                        <i class="bi bi-building me-2"></i> GateOS Pro
+                    </h3>
+                    <p class="text-secondary mb-4">Feito para Condomínios, Empresas e Loteamentos. Gestão massiva e
+                        faturamento automatizado.</p>
+                    <ul class="list-unstyled text-light mb-4">
+                        <li class="mb-2"><i class="bi bi-check2-circle text-primary-custom me-2"></i> Múltiplas Unidades
+                            e Moradores</li>
+                        <li class="mb-2"><i class="bi bi-check2-circle text-primary-custom me-2"></i> Painel do Síndico
+                            com Telemetria</li>
+                        <li class="mb-2"><i class="bi bi-check2-circle text-primary-custom me-2"></i> Códigos de Convite
+                            Temporários</li>
+                        <li class="mb-2"><i class="bi bi-check2-circle text-primary-custom me-2"></i> Mensalidade
+                            Integrada via Asaas</li>
+                    </ul>
+                    <a href="/registro-pro.html" class="btn btn-pro w-100 py-3 mt-auto rounded-3">ASSINAR PLANO
+                        CONDOMÍNIO</a>
+                </div>
+            </div>
+
+            <div class="col-lg-5">
+                <div class="card bg-card p-4 product-card border-0 rounded-4 shadow">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <h3 class="fw-bold text-accent-custom d-flex align-items-center m-0">
+                            <i class="bi bi-house-gear-fill me-2"></i> GateOS Home
+                        </h3>
+                    </div>
+
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                        <span
+                            class="badge bg-secondary bg-opacity-25 text-light fw-bold border border-secondary border-opacity-50">COMPATÍVEL
+                            COM:</span>
+                        <img src="images/alexa.png" alt="Alexa" style="height: 22px; border-radius: 4px;">
+                        <img src="images/google-home.webp" alt="Google Home" style="height: 22px;">
+                    </div>
+
+                    <p class="text-secondary mb-4">Para entusiastas da automação. Integre o seu portão via Sinric Pro e
+                        comande por voz.</p>
+                    <ul class="list-unstyled text-light mb-4">
+                        <li class="mb-2"><i class="bi bi-check2-circle text-accent-custom me-2"></i> Comandos via Google
+                            Home e Alexa</li>
+                        <li class="mb-2"><i class="bi bi-check2-circle text-accent-custom me-2"></i> Licença Única (Sem
+                            Mensalidade)</li>
+                        <li class="mb-2"><i class="bi bi-check2-circle text-accent-custom me-2"></i> Aplicativo Mobile
+                            Simplificado</li>
+                        <li class="mb-2"><i class="bi bi-check2-circle text-accent-custom me-2"></i> Compatibilidade
+                            Nativa com Módulos GateOS</li>
+                    </ul>
+                    <div class="d-flex gap-2 mt-auto">
+                        <a href="#hardware" class="btn btn-home w-100 py-3 rounded-3" style="font-size: 0.9rem;">
+                            <i class="bi bi-cart-fill me-1"></i> COMPRAR MÓDULO
+                        </a>
+                        <a href="/manual.html" class="btn btn-outline-secondary py-3 rounded-3" style="width: 60px;"
+                            title="Ver Manual de Instalação">
+                            <i class="bi bi-book"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="hardware" class="container py-5 my-5 border-top border-secondary border-opacity-25">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0 text-center">
+                <div
+                    class="bg-card rounded-4 p-5 border border-secondary border-opacity-50 d-inline-block position-relative shadow">
+                    <i class="bi bi-cpu text-white opacity-25" style="font-size: 8rem;"></i>
+                    <div class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                        Pronto para Instalar!
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <span class="badge text-bg-warning px-3 py-2 mb-3">PLUG & PLAY</span>
+                <h2 class="fw-bold text-white mb-3">Módulo Oficial GateOS</h2>
+                <p class="text-secondary fs-5 mb-4">
+                    Nós entregamos o hardware pronto para o seu condomínio ou residência! Nosso <strong>Módulo
+                        Controlador de Acesso IoT</strong> conta com chip de alta performance, circuito isolado de
+                    energia e uma case protetora com design de engenharia proprietária.
+                </p>
+                <div class="d-flex gap-3">
+                    <!-- Botão Shopee -->
+                    <a href="LINK_DA_SUA_LOJA_SHOPEE" target="_blank"
+                        class="btn btn-lg fw-bold d-flex align-items-center shadow-sm"
+                        style="background-color: #f97316; color: white; border: none;">
+                        <img src="images/shopee.png" alt="Shopee"
+                            style="height: 75px; margin-right: 10px; border-radius: 4px;">
+                        Clique para comprar
+                    </a>
+
+                    <!-- Botão Mercado Livre -->
+                    <a href="LINK_DO_SEU_ANUNCIO_ML" target="_blank"
+                        class="btn btn-lg fw-bold d-flex align-items-center shadow-sm"
+                        style="background-color: #ffe600; color: #2d3277; border: none;">
+                        <img src="images/mercado-livre.png" alt="Mercado Livre"
+                            style="height: 75px; margin-right: 10px; border-radius: 4px; mix-blend-mode: multiply;">
+                        Clique para comprar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tutoriais" class="container py-5 mb-5 border-top border-secondary border-opacity-25 text-center">
+        <h2 class="fw-bold text-white mb-4">Aprenda a Configurar</h2>
+        <p class="text-secondary mb-5">Inscreva-se no canal oficial da Cortex Technologia e domine o seu sistema.</p>
+
+        <div class="row justify-content-center g-4">
+            <div class="col-md-4">
+                <div class="card bg-card border-0 rounded-4 overflow-hidden">
+                    <div class="bg-dark p-5 text-center position-relative">
+                        <i class="bi bi-youtube text-danger fs-1"></i>
+                    </div>
+                    <div class="card-body text-start p-4">
+                        <h5 class="fw-bold text-white">Como instalar o Módulo GateOS no Motor</h5>
+                        <p class="text-secondary small mb-0">Guia passo a passo de fiação e alimentação 5V.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card bg-card border-0 rounded-4 overflow-hidden">
+                    <div class="bg-dark p-5 text-center position-relative">
+                        <i class="bi bi-youtube text-danger fs-1"></i>
+                    </div>
+                    <div class="card-body text-start p-4">
+                        <h5 class="fw-bold text-white">Configurando a Alexa no GateOS Home</h5>
+                        <p class="text-secondary small mb-0">Aprenda a integrar o Sinric Pro com comandos de voz.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card bg-card border-0 rounded-4 overflow-hidden">
+                    <div class="bg-dark p-5 text-center position-relative">
+                        <i class="bi bi-youtube text-danger fs-1"></i>
+                    </div>
+                    <div class="card-body text-start p-4">
+                        <h5 class="fw-bold text-white">Treinamento para Síndicos</h5>
+                        <p class="text-secondary small mb-0">Como provisionar moradores e checar histórico de acessos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="container text-center py-4 border-top border-secondary border-opacity-25 text-secondary small">
+        <p class="mb-2">&copy; 2026 Cortex Technologia. Todos os direitos reservados.</p>
+        <p class="mb-0">
+            Ao adquirir nossos serviços você concorda com os <a href="termos.html"
+                class="text-primary-custom text-decoration-none fw-bold">Termos de Uso e Licenciamento</a>.
+        </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
