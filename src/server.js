@@ -7,4 +7,4 @@ const PORT = process.env.PORT || 3000;
 // Inicia a escuta do MQTT
 initMqtt();
 
-app.listen(PORT, () => console.log(`🚀 GateOS rodando na porta ${PORT} com Prisma ORM!`));
+app.listen(PORT, '0.0.0.0', () => console.log(`🚀 GateOS rodando na porta ${PORT} com Prisma ORM!`));
